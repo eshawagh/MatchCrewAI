@@ -1,3 +1,4 @@
+// TODO: connect to real /students API endpoint once backend is ready
 const fakeStudents = [
   { name: "Aarav Sharma", role: "Developer", skills: "Python, Java" },
   { name: "Ananya Patil", role: "UI/UX Designer", skills: "Figma, React" },
