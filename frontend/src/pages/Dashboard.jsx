@@ -1,4 +1,4 @@
-// TODO: connect to real /students API endpoint once backend is ready
+// TODO: Replace fakeStudents with a real fetch() call to the /students API once Esha's backend endpoint is ready
 const fakeStudents = [
   { name: "Aarav Sharma", role: "Developer", skills: "Python, Java" },
   { name: "Ananya Patil", role: "UI/UX Designer", skills: "Figma, React" },
