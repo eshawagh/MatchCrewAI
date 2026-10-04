@@ -4,6 +4,8 @@ import ast
 import os
 from dotenv import load_dotenv
 
+# NOTE: Consider switching to batch inserts (executemany) instead of row-by-row 
+# inserts if the dataset grows significantly larger than 100 students.
 # Load database credentials from .env
 load_dotenv()
 
