@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="signal">
+<html lang="en" data-theme="mint">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,13 +10,8 @@
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-[data-theme=signal]{--bg:#0b1220;--surface:#131c30;--line:#24324f;--ink:#e8eefc;--mute:#8d9bb8;--a:#3de0ff;--a2:#7c8cff;--on:#04141c;--r:14px;--glow:0 0 40px #3de0ff22}
-[data-theme=paper]{--bg:#f6f4ee;--surface:#fffefa;--line:#dcd7c8;--ink:#16213a;--mute:#6b7287;--a:#1d3fd8;--a2:#f2a900;--on:#fff;--r:6px;--glow:none}
-[data-theme=aurora]{--bg:#150d2b;--surface:#1f1440;--line:#3a2a6e;--ink:#f3ecff;--mute:#a597d4;--a:#ff5fb7;--a2:#4df0c4;--on:#2a0a1d;--r:22px;--glow:0 0 50px #ff5fb722}
-[data-theme=terminal]{--bg:#07100a;--surface:#0d1a11;--line:#1f3a27;--ink:#c9f7d3;--mute:#6fa27c;--a:#5dff8a;--a2:#ffb547;--on:#03140a;--r:2px;--glow:none}
 [data-theme=mint]{--bg:#e9f5ef;--surface:#ffffff;--line:#c3dfd1;--ink:#0f2e22;--mute:#52725f;--a:#0f7a55;--a2:#ff7a59;--on:#fff;--r:18px;--glow:none}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 "DM Sans",system-ui,sans-serif;transition:background .3s,color .3s}
-[data-theme=terminal] body,[data-theme=terminal] button,[data-theme=terminal] input,[data-theme=terminal] select{font-family:ui-monospace,Menlo,Consolas,monospace}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-spacing:-.02em}
 button,input,select{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--a);outline-offset:2px}
@@ -25,9 +20,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 .logo{font:800 22px "Bricolage Grotesque",sans-serif;display:flex;align-items:center;gap:10px}
 .logo i{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--a2),var(--a));box-shadow:var(--glow);position:relative}
 .logo i::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg)}
-.themes{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:13px}
-.sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
-.sw[aria-pressed=true]{border-color:var(--ink);transform:scale(1.12)}
 .hero{padding:24px 0 18px;max-width:760px}
 .hero h1{font-size:clamp(32px,5.5vw,54px);line-height:1.03;font-weight:800}
 .hero p{color:var(--mute);font-size:16px;margin:12px 0 0;max-width:60ch}
@@ -41,7 +33,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 .filters input{grid-column:1/-1}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 14px}
 .chip,.btn{background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--mute)}
-[data-theme=terminal] .chip,[data-theme=terminal] .btn{border-radius:2px}
 .chip[aria-pressed=true]{background:var(--a);color:var(--on);border-color:var(--a)}
 .btn.pri{background:var(--a);color:var(--on);border-color:var(--a);font-weight:700;padding:9px 16px;border-radius:var(--r)}
 .count{color:var(--mute);font-size:13px;margin-left:auto}
@@ -55,7 +46,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:16px;pa
 .top small{color:var(--mute);display:block}
 .skills{display:flex;flex-wrap:wrap;gap:6px}
 .skills span{font-size:12px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--a) 14%,transparent);border:1px solid color-mix(in srgb,var(--a) 30%,transparent)}
-[data-theme=terminal] .skills span{border-radius:2px}
 .bars{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12px;color:var(--mute);align-items:center}
 .bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden}
 .bar b{display:block;height:100%;background:linear-gradient(90deg,var(--a2),var(--a));border-radius:9px}
@@ -107,14 +97,7 @@ dialog::backdrop{background:#0009}
 <div class="wrap">
 <header>
   <div class="logo"><i></i>MatchCrewAI</div>
-  <div class="themes" role="group" aria-label="Theme">Theme
-    <button class="sw" data-t="signal" title="Signal" aria-label="Signal theme" style="background:linear-gradient(135deg,#0b1220 50%,#3de0ff 50%)"></button>
-    <button class="sw" data-t="paper" title="Paper Lab" aria-label="Paper Lab theme" style="background:linear-gradient(135deg,#f6f4ee 50%,#1d3fd8 50%)"></button>
-    <button class="sw" data-t="aurora" title="Aurora" aria-label="Aurora theme" style="background:linear-gradient(135deg,#150d2b 50%,#ff5fb7 50%)"></button>
-    <button class="sw" data-t="terminal" title="Terminal" aria-label="Terminal theme" style="background:linear-gradient(135deg,#07100a 50%,#5dff8a 50%)"></button>
-    <button class="sw" data-t="mint" title="Mint Studio" aria-label="Mint Studio theme" style="background:linear-gradient(135deg,#e9f5ef 50%,#0f7a55 50%)"></button>
-  </div>
-</header>
+  </header>
 <section class="hero">
   <h1>Build crews that actually click.</h1>
   <p>Every field from your student survey drives the match: skills, domains, roles, availability, experience, work style, prior team experience and the four trait scores.</p>
@@ -137,13 +120,13 @@ dialog::backdrop{background:#0009}
     <div id="cards" class="cards"></div>
   </main>
   <aside aria-live="polite">
-    <h2>Your crew</h2>
+    <h2>Your crew <span id="n" style="color:var(--mute);font-size:16px"></span></h2>
     <div class="score"><b id="sc">0</b><span>/ 100 crew balance</span></div>
     <svg class="radar" id="radar" viewBox="0 0 300 260" role="img" aria-label="Crew trait radar"></svg>
     <div class="legend"><span><i></i>Peak</span><span><i class="d"></i>Average</span></div>
     <div class="bd" id="bd"></div>
     <ul class="members" id="mem"></ul>
-    <p class="tip" id="tip"></p>
+    <p class="tip" id="tip"></p><p class="tip" id="warn" role="alert" hidden style="border-color:#d33;color:#b22"></p>
   </aside>
 </div>
 <div id="p2" hidden>
@@ -162,7 +145,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ini=n=>n.split(" ").map(w=>w[0]).join("").slice(0,2);
 const uniq=k=>[...new Set(S.map(s=>s[k]))].sort();
-const sel=new Set();let dom=null;
+const MAX=5;const sel=new Set();let dom=null;
 const F={cls:["fcls","Class",3],br:["fbr","Branch",4],role:["frole","Role",7],av:["fav","Availability",9],exp:["fexp","Experience",10],pr:["fpr","Prior team project",11],st:["fst","Work style",13]};
 const SORTS=[["Sort: Name",(a,b)=>S[a][0].localeCompare(S[b][0])],["Sort: Experience",(a,b)=>EXP[S[b][10]]-EXP[S[a][10]]],["Sort: Leadership",(a,b)=>S[b][12][0]-S[a][12][0]],["Sort: Communication",(a,b)=>S[b][12][1]-S[a][12][1]],["Sort: Independence",(a,b)=>S[b][12][2]-S[a][12][2]],["Sort: Creativity",(a,b)=>S[b][12][3]-S[a][12][3]]];
 for(const k in F){const[id,l,i]=F[k];$(id).innerHTML=`<option value="">${l}: all</option>`+uniq(i).map(v=>`<option>${esc(v)}</option>`).join("")}
@@ -185,7 +168,7 @@ function cards(){
   <div class="meta"><span>${esc(s[5].join(", "))}</span></div>
   <div class="bars">${T.map((t,j)=>`${t.slice(0,4)}<div class="bar"><b style="width:${s[12][j]*20}%"></b></div>`).join("")}</div>
   <div class="meta"><span>${esc(s[10])}</span><span>${esc(s[9])}</span><span>${esc(s[13])}</span></div>
-  <button class="add" data-i="${i}" aria-pressed="${sel.has(i)}">${sel.has(i)?"In crew ✓":"Add to crew"}</button></article>`}).join("")||'<p class="empty">No students match these filters.</p>';
+  <button class="add" data-i="${i}" aria-pressed="${sel.has(i)}" ${!sel.has(i)&&sel.size>=MAX?'disabled style="opacity:.45;cursor:not-allowed"':""}>${sel.has(i)?"In crew ✓":sel.size>=MAX?"Crew full (5/5)":"Add to crew"}</button></article>`}).join("")||'<p class="empty">No students match these filters.</p>';
 }
 // Team scoring uses every dimension: traits 35, roles 15, skills 15, availability 15, experience 10, work style 5, prior experience 5
 function evalTeam(m){
@@ -214,10 +197,10 @@ function crew(){
   for(let k=1;k<=5;k++)g+=`<polygon class="ax" points="${T.map((_,j)=>pt(j,k).join(",")).join(" ")}"/>`;
   g+=T.map((t,j)=>{const[x,y]=pt(j,5.9);return`<line class="ax" x1="150" y1="130" x2="${pt(j,5)[0]}" y2="${pt(j,5)[1]}"/><text x="${x}" y="${y+4}" text-anchor="middle">${t}</text>`}).join("");
   g+=`<polygon class="shape" points="${e.peak.map((v,j)=>pt(j,v).join(",")).join(" ")}"/><polygon class="avg" points="${e.avg.map((v,j)=>pt(j,v).join(",")).join(" ")}"/>`;
-  $("radar").innerHTML=g;$("sc").textContent=e.total;
+  $("radar").innerHTML=g;$("sc").textContent=e.total;$("n").textContent=`(${sel.size}/${MAX})`;$("warn").hidden=true;
   $("bd").innerHTML=m.length?e.parts.map(p=>`<span>${p[0]}</span><div class="bar"><b style="width:${p[1]*100}%"></b></div><em>${Math.round(p[1]*p[2])}/${p[2]}</em>`).join(""):"";
   $("mem").innerHTML=ids.map(i=>`<li><span>${esc(S[i][0])}<br><small>${esc(S[i][7])} · ${esc(S[i][9])}</small></span><button data-r="${i}" aria-label="Remove ${esc(S[i][0])}">×</button></li>`).join("")||'<li class="empty" style="border:0">No one yet. Add students from the list.</li>';
-  let tip="Add 3 to 5 students to get a suggestion.";
+  let tip="Add 3 to 5 students to get a suggestion. Maximum 5 per crew.";
   if(m.length>=2){const w=e.parts.map(p=>[p[1],p[0]]).sort((a,b)=>a[0]-b[0])[0];
     tip=w[0]>=.85?"Well balanced across every dimension.":`Weakest area: ${w[1].toLowerCase()}. Look for a student who fills that gap.`;}
   $("tip").textContent=tip;
@@ -230,7 +213,7 @@ function open(i){const s=S[i];
   <div class="bars">${T.map((t,j)=>`${t}<div class="bar"><b style="width:${s[12][j]*20}%"></b></div>`).join("")}</div>
   <button class="add" id="dadd">${sel.has(i)?"Remove from crew":"Add to crew"}</button>`;
   $("cl").onclick=()=>$("dlg").close();$("dadd").onclick=()=>{toggle(i);$("dlg").close()};$("dlg").showModal();}
-function toggle(i){sel.has(i)?sel.delete(i):sel.add(i);cards();crew()}
+function toggle(i){if(sel.has(i))sel.delete(i);else{if(sel.size>=MAX){$("warn").textContent="A crew can have at most 5 members. Remove someone to add another.";$("warn").hidden=false;return}sel.add(i)}cards();crew()}
 // Auto-team builder: groups by availability first, greedily adds the student that raises the team score most, then merges leftovers
 function build(){
   const N=+$("tsz").value,teams=[];
@@ -260,7 +243,7 @@ function build(){
 $("build").onclick=build;
 $("teams").onclick=e=>{const o=e.target.dataset.o,l=e.target.dataset.load;
   if(o!=null)open(+o);
-  if(l!=null){sel.clear();window._ev[+l].t.forEach(i=>sel.add(i));tab("1");cards();crew()}};
+  if(l!=null){sel.clear();window._ev[+l].t.slice(0,MAX).forEach(i=>sel.add(i));tab("1");cards();crew()}};
 function tab(n){["1","2"].forEach(k=>{$("t"+k).setAttribute("aria-selected",k===n);$("p"+k).hidden=k!==n});}
 document.querySelector(".tabs").onclick=e=>{if(e.target.dataset.tab)tab(e.target.dataset.tab)};
 document.querySelector(".filters").addEventListener("input",cards);
@@ -268,11 +251,7 @@ $("doms").onclick=e=>{const d=e.target.dataset.d;if(!d)return;dom=dom===d?null:d
 $("reset").onclick=()=>{$("q").value="";for(const k in F)$(F[k][0]).value="";dom=null;chips();cards()};
 $("cards").onclick=e=>{const v=e.target.dataset.i,o=e.target.dataset.o;if(o!=null)open(+o);if(v!=null)toggle(+v)};
 $("mem").onclick=e=>{const r=e.target.dataset.r;if(r!=null)toggle(+r)};
-function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===t));try{localStorage.setItem("mc-theme",t)}catch(e){}}
-document.querySelector(".themes").onclick=e=>{if(e.target.dataset.t)setTheme(e.target.dataset.t)};
-let t0=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"paper":"signal";
-try{t0=localStorage.getItem("mc-theme")||t0}catch(e){}
-setTheme(t0);chips();cards();crew();
+chips();cards();crew();
 </script>
 </body>
 </html>
